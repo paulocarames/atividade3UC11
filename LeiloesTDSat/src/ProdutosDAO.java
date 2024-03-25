@@ -49,6 +49,19 @@ public class ProdutosDAO {
         return produtos;
     }
 
+    public void venderProduto(ProdutosDTO produto) throws Exception {
+        conn = new conectaDAO().connectDB();
+        
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE produtos (nome, valor, status) VALUES (?, ?, 'Vendido')")) {
+            stmt.setString(1, produto.getNome());
+            stmt.setInt(2, produto.getValor());
+            stmt.setString(3, produto.getStatus());
+            stmt.executeUpdate();
+        }
+        
+        conn.close();
+    }    
+    
     public List<ProdutosDTO> listarProdutosVendidos() throws Exception {
         conn = new conectaDAO().connectDB();
 
