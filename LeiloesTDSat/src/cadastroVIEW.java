@@ -199,14 +199,5 @@ public class cadastroVIEW extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 
-    private static class Feedback {
-
-        private static void setText(String o_filme_foi_cadastrado) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public Feedback() {
-        }
-    }
 
    }

@@ -18,7 +18,7 @@ public class ProdutosDTO {
         return valor;
     }
 
-    public String getStatus(String vendido) {
+    public String getStatus() {
         return status;
     }
 
