@@ -1,5 +1,7 @@
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class listagemVIEW extends javax.swing.JFrame {
@@ -127,8 +129,13 @@ public class listagemVIEW extends javax.swing.JFrame {
         String id = id_produto_venda.getText();
         
         ProdutosDAO produtosdao = new ProdutosDAO();
+        ProdutosDTO produto = null;
         
-        //produtosdao.venderProduto(Integer.parseInt(id));
+        try {
+            produtosdao.venderProduto(produto);
+        } catch (Exception ex) {
+            Logger.getLogger(listagemVIEW.class.getName()).log(Level.SEVERE, null, ex);
+        }
      
     }//GEN-LAST:event_btnVenderActionPerformed
 

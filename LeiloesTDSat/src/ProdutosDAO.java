@@ -52,10 +52,11 @@ public class ProdutosDAO {
     public void venderProduto(ProdutosDTO produto) throws Exception {
         conn = new conectaDAO().connectDB();
         
-        try (PreparedStatement stmt = conn.prepareStatement("UPDATE produtos (nome, valor, status) VALUES (?, ?, 'Vendido')")) {
+        try (PreparedStatement stmt = conn.prepareStatement("UPDATE produtos (id, nome, valor, status) VALUES (?, ?, ?, 'Vendido')")) {
             stmt.setString(1, produto.getNome());
             stmt.setInt(2, produto.getValor());
             stmt.setString(3, produto.getStatus());
+            stmt.setInt(4, produto.getId());
             stmt.executeUpdate();
         }
         
